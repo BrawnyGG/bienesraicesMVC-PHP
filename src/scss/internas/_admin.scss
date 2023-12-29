@@ -1,0 +1,48 @@
+.alerta{
+    color: $blanco;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-weight: $bold;
+    text-align: center;
+    &.error{
+        background-color: $rojo;
+    }
+    &.exito{
+        background-color: $verde;
+    }
+}
+.tabla-propiedades{
+    border-collapse: collapse;
+    border: 1px solid $grisOscuro;
+    width: 100%;
+    margin-top: 4rem;
+    text-align: center;
+    thead{
+        background-color: $grisOscuro;
+        th{
+            color: $blanco;
+            padding: 2rem;
+        }
+    }
+    .imagen-tabla{
+        width: 10rem;
+    }
+    tbody{
+        .acciones{
+            padding: 3rem;
+            a{
+                margin-top: 0;
+            }
+        }
+        tr{
+            padding-bottom: 10rem;
+            &:nth-child(even){
+                background-color: $gris;
+            }
+        }
+    }
+}
+.img-small{
+    width: 25rem;
+}
