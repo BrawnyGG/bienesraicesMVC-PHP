@@ -12,6 +12,9 @@
 
         <a href="/propiedades/crear" class="boton-verde">Crear Propiedad</a>
         <a href="/vendedores/crear" class="boton-amarillo">Crear Vendedor</a>
+        <a href="/entradas/crear" class="boton-rojo">Crear Entrada</a>
+
+
         <h2>Propiedades</h2>
         <table class="tabla-propiedades">
             <thead>
@@ -73,4 +76,33 @@
             </tbody>
         </table>
 
+        <h2>Entradas</h2>
+        <table class="tabla-propiedades">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach($entradas as $entrada):?>
+                <tr> 
+                    <td><?php echo $entrada->id ?></td>
+                    <td><?php echo $entrada->titulo ?></td>
+                    <td> <img src="imagenes/<?php echo $entrada->imagen ?>" class="imagen-tabla"> </td>
+
+                    <td class="acciones">
+                        <a href="entradas/actualizar?id=<?php echo $entrada->id ?>" class="boton-amarillo-block">Actualizar</a>
+                        <form class="w-100" method="POST"  action="/entradas/eliminar">
+                            <input type="hidden" name="id" value="<?php echo $entrada->id ?>">
+                            <input type="hidden" name="tipo" value="entrada">                            
+                            <input type="submit" value="Eliminar" class="boton-rojo-block">
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
     </main>

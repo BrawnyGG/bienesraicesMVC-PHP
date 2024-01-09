@@ -46,3 +46,15 @@
 .img-small{
     width: 25rem;
 }
+//Icono de ojo en contraseña
+.contrasena-campo{
+    position: relative;
+    svg{
+        cursor: pointer;
+        color: darken($color: $gris, $amount: 10);
+        width: 2.5rem;
+        position: absolute;
+        right: 5%;
+        top: -75%;
+    }
+}

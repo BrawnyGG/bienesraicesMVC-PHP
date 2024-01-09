@@ -4,23 +4,27 @@ namespace Controllers;
 use Model\Propiedad;
 use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
+use Model\Entrada;
 use MVC\Router;
 
 
 class PropiedadController{
 
+    //Pagina principal del panel del administrador
     public static function index(Router $router){
         $propiedades = Propiedad::all();
         $vendedores = Vendedor::all();
+        $entradas = Entrada::all();
         //Realiza mensaje condicional (exito o fracaso)
         $resultado = $_GET["mensaje"] ?? null;    
         $valor = $_GET["valor"] ?? null;
 
         $router->render("propiedades/admin", [
-            'propiedades' => $propiedades,
             'resultado' => $resultado,
             'valor' => $valor,
-            'vendedores' => $vendedores
+            'propiedades' => $propiedades,
+            'vendedores' => $vendedores,
+            'entradas' => $entradas
         ]);
     }
     public static function crear(Router $router){

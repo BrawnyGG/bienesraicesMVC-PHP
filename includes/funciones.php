@@ -1,5 +1,8 @@
 <?php
+//Carpeta del servidor local
 define("CARPETA_IMAGENES", $_SERVER["DOCUMENT_ROOT"] . "/imagenes/");
+//Carpeta del servidor hostinger
+//define("CARPETA_IMAGENES", $_SERVER["DOCUMENT_ROOT"] . "/public/imagenes/");
 
 
 function debuggear($var){
@@ -24,7 +27,7 @@ function validarORedireccionar (string $url) : int {
 }
 
 function validarTipoContenido($tipo){
-    $valido = ["propiedad", "vendedor", "vendedor(a)"];
+    $valido = ["propiedad", "vendedor", "vendedor(a)", "entrada"];
     
     return in_array($tipo, $valido);
 }

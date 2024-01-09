@@ -183,6 +183,8 @@ class ActiveRecord{
                 header("Location:/admin?mensaje=$mensaje&valor=propiedad");
             } elseif (static::$tabla === "vendedores"){
                 header("Location:/admin?mensaje=$mensaje&valor=vendedor(a)");
+            } elseif (static::$tabla === "entradas"){
+                header("Location:/admin?mensaje=$mensaje&valor=entrada");
             }
         }
     }

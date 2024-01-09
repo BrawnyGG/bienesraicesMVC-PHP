@@ -6,6 +6,7 @@ function eventListeners(){
     menuMobile();
     darkMode();
     contactoCondicional();
+    viewPassword();
 }
 
 function menuMobile(){
@@ -63,5 +64,17 @@ function mostrarMetodosContacto(e){
                 <input type="email" id="email" placeholder="Tu correo electrónico"
                 name="contacto[email]" required>
         `;
+    }
+}
+
+function viewPassword(){
+    const icono = document.querySelector('.contrasena-campo svg');
+    const input = document.querySelector('.contrasena-campo input');
+    icono.onclick = function(){
+        if (input.type == 'password'){
+            input.type = 'text';
+        } else {
+            input.type ='password';
+        }
     }
 }
