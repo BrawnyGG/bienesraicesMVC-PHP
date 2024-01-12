@@ -44,10 +44,17 @@ class Email {
 
         //Definimos el contenido
         $contenido = '<html>';
-        $contenido .= '<p>Hola, : ' . $nombre . '</p>';
+        $contenido .= '<head>';
+        $contenido .= '<style>html{font-size:62.5%;}body{margin:0;}p{font-size:1.4rem;padding:0 1rem;}h1{text-align:center;font-size:2.4rem;}span{color:#E08709;}.footer{padding-top:1rem;color:#333333;font-size:1.2rem;}</style>';
+        $contenido .= '</head>';
+
+        $contenido .= '<body>';
+        $contenido .= '<h1>Hola, <span>'.$nombre.'</span></h1>';
         $contenido .= '<p>¡Muchas gracias por contactarnos!</p>';
         $contenido .= '<p>En unos instantes un asesor se comunicará contigo para el motivo de tu compra/venta</p>';
-        $contenido .= '<p>Gracias por confiar en nosotros</p>';
+        $contenido .= '<p>Gracias por confiar en <span>nosotros</span></p>';
+        $contenido .= '<p class="footer">Todos los derechos reservados '.date("Y").' &copy;</p>';
+        $contenido .= '</body>';
         $contenido .= '</html>';
 
         $this->mail->Body = $contenido;

@@ -7,6 +7,7 @@ function eventListeners(){
     darkMode();
     contactoCondicional();
     viewPassword();
+    contadores();
 }
 
 function menuMobile(){
@@ -68,13 +69,37 @@ function mostrarMetodosContacto(e){
 }
 
 function viewPassword(){
-    const icono = document.querySelector('.contrasena-campo svg');
-    const input = document.querySelector('.contrasena-campo input');
-    icono.onclick = function(){
-        if (input.type == 'password'){
-            input.type = 'text';
-        } else {
-            input.type ='password';
+    try {
+        const icono = document.querySelector('.contrasena-campo svg');
+        const input = document.querySelector('.contrasena-campo input');
+        icono.onclick = function(){
+            if (input.type == 'password'){
+                input.type = 'text';
+            } else {
+                input.type ='password';
+            }
         }
+    } catch (error) {
+        
+    }
+}
+function contadores(){
+    contadorChar('#descripcionBlog','#contadorDescBlog',120);
+    contadorChar('#tituloBlog','#contadorTitBlog',40);
+}
+function contadorChar(Idtxtarea, Idcontador,limite){
+    try {
+        let txtarea = document.querySelector(Idtxtarea);
+        
+        let contador = document.querySelector(Idcontador);
+        let texto = document.querySelector(Idtxtarea).value;
+        contador.textContent = texto.length + "/" + limite;
+
+        txtarea.addEventListener("keyup", ()=>{
+            let texto = document.querySelector(Idtxtarea).value;
+            contador.textContent = texto.length + "/" + limite;
+        })
+    } catch (error) {
+        console.log(error);
     }
 }

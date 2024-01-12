@@ -22,6 +22,15 @@ class ActiveRecord{
 
         return $resultado;
     }
+    public static function offset($limite, $offset){
+        $query = "SELECT * FROM " . static::$tabla;
+        $query .= " LIMIT " . $limite;
+        $query .= " OFFSET "  . $offset;
+
+        $resultado = self::consultarSQL($query);
+
+        return $resultado;
+    }
     public static function get($limite){
         $query = "SELECT * FROM " . static::$tabla . " LIMIT " . $limite;
 

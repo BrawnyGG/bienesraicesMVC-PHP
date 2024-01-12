@@ -27,14 +27,14 @@ class Entrada extends ActiveRecord{
     public function validarFormulario(){
         if(!$this->titulo){
             self::$errores[] = "La entrada debe contener un título";
-        } elseif ( strlen($this->titulo) > 45 ){
-            self::$errores[] = "El titulo debe ser menor a 45 caracteres";
+        } elseif ( strlen($this->titulo) > 42 ){
+            self::$errores[] = "El titulo debe ser menor o igual a 40 caracteres";
         }
         if(strlen($this->contenido) < 250){
             self::$errores[] = "La entrada debe contener un contenido mayor a 250 caracteres";
         }
-        if(strlen($this->descripcion) > 150){
-            self::$errores[] = "La descripcion de la entrada debe contener un contenido menor a 150 caracteres";
+        if(strlen($this->descripcion) > 122){
+            self::$errores[] = "La descripcion de la entrada debe contener un contenido menor o igual a 120 caracteres";
         }
         if(!$this->vendedorid){
             self::$errores[] = "Se debe seleccionar un creador";

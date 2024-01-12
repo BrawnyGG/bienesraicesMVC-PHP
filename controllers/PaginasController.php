@@ -21,9 +21,18 @@ class PaginasController{
         ]);
     }
     public static function propiedades(Router $router){
+        $limite = 6;
         $propiedades = Propiedad::all();
+        $paginas = ceil( count($propiedades) / $limite );
+        $pagina = intval($_GET['p']);
+        $offset = ($pagina - 1) * $limite;
+
+        $propiedades = Propiedad::offset($limite, $offset);
+
         $router->render("/paginas/propiedades", [
-            'propiedades' => $propiedades
+            'propiedades' => $propiedades,
+            'paginas' => $paginas,
+            'pagina' => $pagina
         ]);
     }
     public static function propiedad(Router $router){

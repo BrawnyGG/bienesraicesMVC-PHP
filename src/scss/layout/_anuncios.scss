@@ -53,3 +53,24 @@
         }
     }
 }
+.paginacion{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    a{
+        font-weight: $bold;
+        padding: 1rem 2rem;
+        margin-right: 1rem;
+        border: 1px solid $gris;
+        color: $verde;
+        &:hover{
+            background-color: $amarillo;
+            color: $blanco;
+        }
+    }
+    .seleccionado{
+        background-color: $amarillo;
+        color: $blanco;
+    }
+
+}

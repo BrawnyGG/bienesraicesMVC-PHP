@@ -1,11 +1,13 @@
 <fieldset>
     <legend>Información General</legend>
-    <label for="titulo">Título:</label>
-    <input type="text" id="titulo" name="entrada[titulo]" placeholder="Titulo del blog"
+    <label for="tituloBlog">Título:</label>
+    <input type="text" id="tituloBlog" name="entrada[titulo]" placeholder="Titulo del blog"
     value="<?php echo s( $entrada->titulo ); ?>">
+    <p class="contador" id="contadorTitBlog"></p>
 
-    <label for="contenido">Descripcion:</label>
-    <textarea id="contenido" name="entrada[descripcion]"><?php echo s($entrada->descripcion); ?></textarea>
+    <label for="descripcionBlog">Descripcion:</label>
+    <textarea id="descripcionBlog" name="entrada[descripcion]"><?php echo s($entrada->descripcion); ?></textarea>
+    <p class="contador" id="contadorDescBlog"></p>
 
     <label for="imagen">Imagen:</label>
     <input type="file" id="imagen" accept="image/png, image/jpeg" name="entrada[imagen]">

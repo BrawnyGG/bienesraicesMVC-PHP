@@ -34,7 +34,7 @@ if(!isset($inicio)){
                     <img class="icono-darkmode" src="/build/img/dark-mode.svg" alt="icono dark mode">
                     <nav class="navegacion">
                         <a href="/nosotros">Nosotros</a>
-                        <a href="/propiedades">Propiedades</a>
+                        <a href="/propiedades?p=1">Propiedades</a>
                         <a href="/blog">Blog</a>
                         <a href="/contacto">Contacto</a>
                         <?php if ($auth): ?>
