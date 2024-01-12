@@ -17,6 +17,7 @@ if(!isset($inicio)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes raices</title>
     <link rel="stylesheet" href="/build/css/app.css">
+    <link rel="icon" href="/build/img/casa.png" type="image/x-icon">
 </head>
 <body>
     <header class="header <?php echo $inicio ? "inicio" : "" ?>">
